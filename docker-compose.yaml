@@ -1,5 +1,5 @@
 services:
-  mogodb:
+  mongodb:
     build: ./mongodb
     image: mongodb:v1
     container_name: mongodb
@@ -15,6 +15,7 @@ services:
     depends_on: 
       - mongodb 
       - catalogue
+
 networks:
   default:
     driver: bridge
