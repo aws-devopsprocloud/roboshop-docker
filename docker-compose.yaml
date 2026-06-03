@@ -6,11 +6,13 @@ services:
 
   catalogue:
     build: ./catalogue
+    image: catalogue:v1
     container_name: catalogue
     depends_on: 
       - mongodb 
   frontend:
     build: ./frontend
+    image: frontend:v1
     container_name: frontend
     ports:
     - "80:80"
@@ -24,6 +26,7 @@ services:
 
   user:
     build: ./user
+    image: user:v1
     container_name: user
     depends_on: 
       - redis
