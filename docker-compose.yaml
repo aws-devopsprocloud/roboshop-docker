@@ -43,6 +43,7 @@ services:
       - catalogue
   
   mysql:
+    build: ./mysql
     image: mysql:v1
     container_name: mysql 
     
