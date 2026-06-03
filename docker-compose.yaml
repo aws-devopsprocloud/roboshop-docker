@@ -1,0 +1,22 @@
+services:
+  mogodb:
+    build: ./mongodb
+    image: mongodb:v1
+    container_name: mongodb
+
+  catalogue:
+    build: ./catalogue
+    container_name: catalogue
+    depends_on: 
+      - mongodb 
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    depends_on: 
+      - mongodb 
+      - catalogue
+networks:
+  default:
+    driver: bridge
+    name: roboshop
+    external: false # if true, you need to create network manually
