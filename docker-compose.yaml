@@ -7,13 +7,13 @@ services:
   catalogue:
     build: ./catalogue
     container_name: catalogue
-    ports:
-    - "80:80"
     depends_on: 
       - mongodb 
   frontend:
     build: ./frontend
     container_name: frontend
+    ports:
+    - "80:80"
     depends_on: 
       - mongodb 
       - catalogue
