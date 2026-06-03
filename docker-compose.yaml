@@ -18,6 +18,17 @@ services:
       - mongodb 
       - catalogue
 
+  redis:
+    image: redis 
+    container_name: redis 
+
+  user:
+    build: ./user
+    container_name: user
+    depends_on: 
+      - redis
+      - mongodb 
+
 networks:
   default:
     driver: bridge
