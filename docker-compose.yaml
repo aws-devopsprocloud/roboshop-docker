@@ -15,9 +15,7 @@ services:
     ports:
     - "80:80"
     depends_on: 
-      - mongodb 
       - catalogue
-      - redis
       - user
 
   redis:
