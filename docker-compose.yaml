@@ -3,8 +3,8 @@ services:
     build: ./mongodb
     image: mongodb:1.0.0
     container_name: mongodb
-    volumes:
-    - /:/data/db
+    # volumes:
+    # - /:/data/db
 
   catalogue:
     build: ./catalogue
@@ -87,7 +87,6 @@ services:
       - rabbitmq 
       - cart 
       - user
-
 
 networks:
   default:
